@@ -1,0 +1,8 @@
+component,logged_attempts,successful_calls,incomplete_output_calls,failed_calls,transport_failure_delivery_unknown,calls_with_token_data,avg_input_tokens_when_recorded,avg_output_tokens_when_recorded,avg_reasoning_tokens_when_recorded,avg_api_latency_ms_all_attempts,total_input_tokens_recorded,total_output_tokens_recorded,total_reasoning_tokens_recorded_subset,total_api_latency_ms
+House Rules,13,7,1,5,2,8,613.88,711.12,588.12,4155.23,4911,5689,4705,54018
+Listening,5,5,0,0,0,5,316.20,446.60,249.40,4727.40,1581,2233,1247,23637
+Mediation,8,7,0,1,1,7,760.57,746.14,351.86,5558.12,5324,5223,2463,44465
+Agreement,4,4,0,0,0,4,831.75,390.25,113.00,4708.75,3327,1561,452,18835
+Smart House Board,7,6,1,0,0,7,660.29,703.14,494.43,7592.14,4622,4922,3461,53145
+AI Judge (unattributed),16,9,0,7,0,9,463.89,380.11,163.56,3827.38,4175,3421,1472,61238
+Verification,4,2,0,2,1,2,15.00,9.00,0.00,643.50,30,18,0,2574

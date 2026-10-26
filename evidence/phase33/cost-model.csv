@@ -1,0 +1,15 @@
+metric,basis,n_tasks_or_scenarios,provider_attempts,input_tokens_per_task_or_total,output_tokens_per_task_or_total,reasoning_tokens_subset_per_task_or_total,estimated_usd,assumption
+House Rules proposal generation,Mean completed generate_proposals operation,5,6,803.00,1058.20,887.60,0.000609400,"Five completed operations; one includes an output-limit attempt and its retry, both priced."
+Smart House Board initial analysis,Mean successful analyze_post operation,3,3,645.33,559.67,355.67,0.000344367,Three complete initial analyses; excludes later clarification/revision steps.
+Listening Agent call,Mean attributed successful historical calls,5,5,316.20,446.60,249.40,0.000254920,Per-call estimate from component-attributed successful logs; Phase 3.3 optimization probes excluded.
+Mediation Agent call,Mean attributed successful historical calls,3,3,767.33,1058.67,620.00,0.000606067,Per-call estimate from component-attributed successful logs; Phase 3.3 optimization probes excluded.
+Agreement Agent call,Mean attributed successful historical calls,4,4,831.75,390.25,113.00,0.000278300,Per-call estimate from component-attributed successful logs; Phase 3.3 optimization probes excluded.
+Full two-roommate mediation,One observed Phase 3.1 completed case,1,4,2211.00,2441.00,1329.00,0.001441600,Two Listening calls + one Mediation call + one Agreement call; API latency sum is not wall-clock workflow time.
+Full mediation from component means,Modeled two-participant workflow,1,4,2231.48,2342.12,1231.80,0.001394207,Two mean Listening calls + one mean Mediation call + one mean Agreement call.
+Context experiment baseline,One real gpt-6-luna call,1,1,864.00,528.00,142.00,0.000350400,"Fictional scenario; identical agent instructions, effort, schema, and output budget."
+Context experiment optimized,One real gpt-6-luna call,1,1,656.00,528.00,186.00,0.000329600,"Fictional scenario; identical agent instructions, effort, schema, and output budget."
+All logged calls with token usage,"Historical observed records, illustrative only",42,42,23970.00,23067.00,13800.00,0.013930500,42 usage-bearing attempts; excludes 15 attempts with no token counts. Output tokens already include reasoning; no cache discount applied.
+Monthly cost per active user,Linear four-person household scenario,1,,,,,0.000857117,Per household/month: 1 Rules generation + 4 Board analyses + 1 two-person mediation; divided by 4 residents.
+Monthly projection for 1 active user(s),Linear scaling from stated household scenario,1,,,,,0.000857117,Assumes all users are active and households average four; fractional households are expected-value scaling.
+Monthly projection for 100 active user(s),Linear scaling from stated household scenario,100,,,,,0.085711667,Assumes all users are active and households average four; fractional households are expected-value scaling.
+Monthly projection for 10000 active user(s),Linear scaling from stated household scenario,10000,,,,,8.571166667,Assumes all users are active and households average four; fractional households are expected-value scaling.

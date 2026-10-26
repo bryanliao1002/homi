@@ -1,0 +1,52 @@
+{
+  "phase": "3.2 AI Safety & Reliability",
+  "verified_on": "2026-10-26",
+  "source": "Actual ai_usage_logs records from an isolated disposable SQLite database",
+  "requested_model": "gpt-6-luna",
+  "response_model": "gpt-6-luna-global",
+  "successful_calls": 3,
+  "failed_calls": 0,
+  "calls": [
+    {
+      "purpose": "house_rules",
+      "operation": "generate_proposals",
+      "reasoning_effort": "high",
+      "input_tokens": 446,
+      "output_tokens": 256,
+      "reasoning_tokens": 166,
+      "api_latency_ms": 3780,
+      "http_status": 200,
+      "outcome": "success"
+    },
+    {
+      "purpose": "smart_board",
+      "operation": "analyze_post",
+      "reasoning_effort": "medium",
+      "input_tokens": 626,
+      "output_tokens": 363,
+      "reasoning_tokens": 183,
+      "api_latency_ms": 3438,
+      "http_status": 200,
+      "outcome": "success"
+    },
+    {
+      "purpose": "ai_judge",
+      "operation": null,
+      "reasoning_effort": "high",
+      "input_tokens": 492,
+      "output_tokens": 787,
+      "reasoning_tokens": 445,
+      "api_latency_ms": 6326,
+      "http_status": 200,
+      "outcome": "success"
+    }
+  ],
+  "totals": {
+    "input_tokens": 1564,
+    "output_tokens": 1406,
+    "reasoning_tokens": 794,
+    "api_latency_ms": 13544
+  },
+  "cost": "Not estimated; no price data was used.",
+  "privacy": "No API key, request ID, prompt, household identifier, roommate text, or response text is included."
+}

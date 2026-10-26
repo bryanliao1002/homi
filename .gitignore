@@ -1,0 +1,21 @@
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.sqlite*
+*.sqlite3*
+backend/data/
+.DS_Store
+
+# Keep private pilot responses and unreviewed screenshot uploads out of Git.
+/evidence/Survey Results/
+/Screenshots/
+/evidence/final-screenshots/*
+!/evidence/final-screenshots/MANUAL-CAPTURE.md
+!/evidence/final-screenshots/public/
+!/evidence/final-screenshots/public/**

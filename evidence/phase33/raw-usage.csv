@@ -1,0 +1,58 @@
+source_db,source_row_id,created_at_utc,component,attribution_basis,purpose,agent_operation,agent_run_key,model_label,reasoning_effort,result_class,http_status,error_code,input_tokens,output_tokens,reasoning_tokens,api_latency_ms,request_id_present
+homi-phase22-budget-test.sqlite,1,2026-10-26T04:24:10.281149+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,5f6d7763d87a,gpt-6-luna,high,transport_failure_delivery_unknown,502,network_error,,,,10,False
+homi-phase22-budget-test.sqlite,2,2026-10-26T04:24:10.290542+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,a135da15db23,gpt-6-luna,high,transport_failure_delivery_unknown,502,network_error,,,,3,False
+homi-phase22-budget-test.sqlite,3,2026-10-26T04:24:42.604858+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,85e3f8a05b00,gpt-6-luna-global,high,success,200,,847,1187,970,9635,True
+homi-phase22-budget-test.sqlite,4,2026-10-26T04:24:48.459182+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,f6d31d7ca0b0,gpt-6-luna-global,high,incomplete_output_limit,200,output_limit_reached,860,512,512,5830,True
+homi-phase22-budget-test.sqlite,5,2026-10-26T04:25:04.962142+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,f6d31d7ca0b0,gpt-6-luna-global,high,success,200,,860,2160,1918,16499,True
+homi-phase23-browser.sqlite,1,2026-10-26T05:12:58.378207+00:00,Listening,matched exported agent evidence,ai_judge,,c588769d1e57,gpt-6-luna-global,medium,success,200,,294,356,180,3849,True
+homi-phase23-browser.sqlite,2,2026-10-26T05:13:31.307440+00:00,Listening,matched exported agent evidence,ai_judge,,1f1a3b3168ce,gpt-6-luna-global,medium,success,200,,347,417,186,4927,True
+homi-phase23-browser.sqlite,3,2026-10-26T05:15:04.247156+00:00,Mediation,matched exported agent evidence,ai_judge,,c7dd09bb537a,gpt-6-luna-global,high,success,200,,920,1449,933,9449,True
+homi-phase23-browser.sqlite,4,2026-10-26T05:15:20.107722+00:00,Agreement,matched exported agent evidence,ai_judge,,2480e5e9d4fb,gpt-6-luna-global,medium,success,200,,720,433,153,4128,True
+homi-phase23-browser.sqlite,5,2026-10-26T05:15:46.987448+00:00,Agreement,matched exported agent evidence,ai_judge,,bffcb1722ec4,gpt-6-luna-global,medium,success,200,,969,451,149,4138,True
+homi-phase23-browser.sqlite,6,2026-10-26T05:16:25.607332+00:00,Agreement,matched exported agent evidence,ai_judge,,c29875a06868,gpt-6-luna-global,medium,success,200,,972,361,58,3423,True
+homi-phase23-browser.sqlite,7,2026-10-26T05:18:42.684971+00:00,Listening,matched exported agent evidence,ai_judge,,92aa2625a22c,gpt-6-luna-global,medium,success,200,,285,275,126,3018,True
+homi-phase23-live.sqlite,1,2026-10-26T05:02:16.139624+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,ba3895d065be,gpt-6-luna,medium,failed,400,invalid_request_error:input,,,,517,False
+homi-phase23-live.sqlite,2,2026-10-26T05:02:16.667894+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,cc20c2f32ad8,gpt-6-luna,medium,failed,400,invalid_request_error:input,,,,505,False
+homi-phase23-live.sqlite,3,2026-10-26T05:02:17.128989+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,8b93f9a5a969,gpt-6-luna,medium,failed,400,invalid_request_error:input,,,,441,False
+homi-phase23-live.sqlite,4,2026-10-26T05:03:25.293247+00:00,Verification,SQLite purpose,verification,,,gpt-6-luna-global,medium,success,200,,15,9,0,1245,True
+homi-phase23-live.sqlite,5,2026-10-26T05:04:06.451824+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,153db9106894,gpt-6-luna,medium,failed,400,invalid_request_error:input,,,,617,False
+homi-phase23-live.sqlite,6,2026-10-26T05:05:05.950864+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,0bece3a537d4,gpt-6-luna,medium,failed,400,invalid_request_error:input,,,,467,False
+homi-phase23-live.sqlite,7,2026-10-26T05:05:20.534451+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,7458ba833e3c,gpt-6-luna,medium,failed,400,invalid_request_error:input,,,,378,False
+homi-phase23-live.sqlite,8,2026-10-26T05:05:54.855225+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,37ec90039397,gpt-6-luna,medium,failed,400,invalid_request_error:input,,,,383,False
+homi-phase23-live.sqlite,9,2026-10-26T05:06:23.855092+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,2f8bcc078af0,gpt-6-luna-global,medium,success,200,,382,442,212,7016,True
+homi-phase23-live.sqlite,10,2026-10-26T05:07:17.217880+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,ed04bfc268d8,gpt-6-luna-global,medium,success,200,,273,327,181,15798,True
+homi-phase23-live.sqlite,11,2026-10-26T05:07:24.682798+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,940828085efe,gpt-6-luna-global,high,success,200,,1046,562,166,7421,True
+homi-phase23-live.sqlite,12,2026-10-26T05:07:30.871850+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,0a55cb6ca034,gpt-6-luna-global,medium,success,200,,608,376,105,6169,True
+homi-phase24-browser.sqlite,1,2026-10-26T06:01:43.918280+00:00,Smart House Board,SQLite purpose,smart_board,analyze_post,2a861d7d7270,gpt-6-luna-global,medium,success,200,,661,766,563,6703,True
+homi-phase24-browser.sqlite,2,2026-10-26T06:02:15.117566+00:00,Smart House Board,SQLite purpose,smart_board,clarify_post,7320f1577d6c,gpt-6-luna-global,medium,incomplete_output_limit,200,output_limit_reached,686,1200,1032,8757,True
+homi-phase24-browser.sqlite,3,2026-10-26T06:05:47.844509+00:00,Smart House Board,SQLite purpose,smart_board,revise_post,be207a678989,gpt-6-luna-global,medium,success,200,,669,733,504,6191,True
+homi-phase24-browser.sqlite,4,2026-10-26T06:06:44.591972+00:00,Smart House Board,SQLite purpose,smart_board,clarify_post,d3673530483b,gpt-6-luna-global,medium,success,200,,677,671,448,4906,True
+homi-phase24-browser.sqlite,5,2026-10-26T06:50:24.480170+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,9bc193c26eae,gpt-6-luna-global,medium,success,200,,266,387,227,5189,True
+homi-phase24-browser.sqlite,6,2026-10-26T06:51:17.830643+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,17fad4750f36,gpt-6-luna-global,medium,success,200,,283,388,213,4709,True
+homi-phase24-browser.sqlite,7,2026-10-26T06:52:42.815662+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,a00e11b91ba9,gpt-6-luna-global,high,success,200,,729,615,266,6127,True
+homi-phase24-browser.sqlite,8,2026-10-26T06:54:33.363062+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,131625398ac2,gpt-6-luna-global,medium,success,200,,561,312,102,4547,True
+homi-phase31-integration.sqlite,1,2026-10-26T07:02:33.102802+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,45f0ec79689f,gpt-6-luna-global,high,success,200,,440,397,273,4410,True
+homi-phase31-integration.sqlite,2,2026-10-26T07:03:39.728371+00:00,Smart House Board,SQLite purpose,smart_board,analyze_post,71830e5b9ba7,gpt-6-luna-global,medium,success,200,,649,550,321,4836,True
+homi-phase31-integration.sqlite,3,2026-10-26T07:04:11.155512+00:00,Smart House Board,SQLite purpose,smart_board,clarify_post,ec39d4553cff,gpt-6-luna-global,medium,success,200,,654,639,410,18314,True
+homi-phase31-integration.sqlite,4,2026-10-26T07:06:09.893049+00:00,Listening,matched exported agent evidence,ai_judge,,7367f771c5a4,gpt-6-luna-global,medium,success,200,,308,624,421,6156,True
+homi-phase31-integration.sqlite,5,2026-10-26T07:07:01.156274+00:00,Listening,matched exported agent evidence,ai_judge,,6dfb056b4fe7,gpt-6-luna-global,medium,success,200,,347,561,334,5687,True
+homi-phase31-integration.sqlite,6,2026-10-26T07:09:06.969285+00:00,Mediation,matched exported agent evidence,ai_judge,,4683c900d908,gpt-6-luna-global,high,success,200,,890,940,482,7604,True
+homi-phase31-integration.sqlite,7,2026-10-26T07:09:35.577058+00:00,Agreement,matched exported agent evidence,ai_judge,,b70b2b18a365,gpt-6-luna-global,medium,success,200,,666,316,92,7146,True
+homi-phase32-live.sqlite,1,2026-10-26T14:30:21.374964+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,ea865b5920fc,gpt-6-luna-global,high,success,200,,446,256,166,3780,True
+homi-phase32-live.sqlite,2,2026-10-26T14:30:24.832234+00:00,Smart House Board,SQLite purpose,smart_board,analyze_post,0b41c63dbb1d,gpt-6-luna-global,medium,success,200,,626,363,183,3438,True
+homi-phase32-live.sqlite,3,2026-10-26T14:30:31.201339+00:00,Mediation,matched exported agent evidence,ai_judge,,d19646c48533,gpt-6-luna-global,high,success,200,,492,787,445,6326,True
+homi-phase33-context-live.sqlite,1,2026-10-26T14:50:45.115168+00:00,Mediation,SQLite agent run,ai_judge,context_reduction_baseline,8da57370113b,gpt-6-luna-global,high,success,200,,864,528,142,8429,True
+homi-phase33-context-live.sqlite,2,2026-10-26T14:50:52.564307+00:00,Mediation,SQLite agent run,ai_judge,context_reduction_optimized,10fca12d4c07,gpt-6-luna-global,high,success,200,,638,463,133,7440,True
+homi-phase33-context-live.sqlite,3,2026-10-26T14:58:05.697406+00:00,Mediation,SQLite agent run,ai_judge,context_reduction_baseline,e4437d5eead6,gpt-6-luna-global,high,success,200,,864,528,142,557,True
+homi-phase33-context-live.sqlite,4,2026-10-26T14:58:10.355320+00:00,Mediation,SQLite agent run,ai_judge,context_reduction_optimized,a93aa3dd29bd,gpt-6-luna-global,high,success,200,,656,528,186,4652,True
+homi-phase33-experiment.sqlite,1,2026-10-26T14:49:44.756607+00:00,Mediation,SQLite agent run,ai_judge,context_reduction_baseline,0c91458773d0,gpt-6-luna,high,transport_failure_delivery_unknown,502,network_error,,,,8,False
+homi.sqlite,1,2026-10-26T03:30:48.434756+00:00,Verification,SQLite purpose,verification,,,gpt-6-luna,medium,transport_failure_delivery_unknown,502,network_error,,,,51,False
+homi.sqlite,2,2026-10-26T03:32:47.987473+00:00,Verification,SQLite purpose,verification,,,gpt-6-luna,medium,failed,403,http_403,,,,77,False
+homi.sqlite,3,2026-10-26T03:36:16.836799+00:00,Verification,SQLite purpose,verification,,,gpt-6-luna-global,medium,success,200,,15,9,0,1201,True
+homi.sqlite,4,2026-10-26T03:51:12.746849+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,ead8403c7e7e,gpt-6-luna,high,failed,400,invalid_request_error:input,,,,453,False
+homi.sqlite,5,2026-10-26T03:51:53.809228+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,10db785599fb,gpt-6-luna,high,failed,400,invalid_request_error:input,,,,453,False
+homi.sqlite,6,2026-10-26T03:52:37.536384+00:00,House Rules,SQLite purpose,house_rules,request_shape_probe,bcbec4c69400,gpt-6-luna-global,high,success,200,,109,31,16,1153,True
+homi.sqlite,7,2026-10-26T03:52:59.756508+00:00,House Rules,SQLite purpose,house_rules,agent_payload_check,a797de0c4c88,gpt-6-luna,high,failed,400,invalid_request_error:input,,,,447,False
+homi.sqlite,8,2026-10-26T03:53:50.344135+00:00,House Rules,SQLite purpose,house_rules,generate_proposals,a47beb044301,gpt-6-luna-global,high,success,200,,562,779,599,6338,True
+homi.sqlite,9,2026-10-26T03:53:55.379947+00:00,House Rules,SQLite purpose,house_rules,revise_proposal,e5dc50cbe1df,gpt-6-luna-global,high,success,200,,787,367,251,5007,True
+homi.sqlite,10,2026-10-26T05:04:18.528380+00:00,AI Judge (unattributed),agent name unavailable,ai_judge,,,gpt-6-luna-global,medium,success,200,,27,12,0,954,True

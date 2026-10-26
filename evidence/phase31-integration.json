@@ -1,0 +1,135 @@
+{
+  "phase": "3.1",
+  "verified_on": "2026-10-26",
+  "scope": "Integration and regression verification; no application source fixes or UI redesigns were needed.",
+  "automated_verification": {
+    "workflow_tests": {
+      "passed": 18,
+      "failed": 0,
+      "ai_mode": "Mocked model responses; fixture usage values are not reported as provider usage.",
+      "coverage_added": [
+        "House Rules preference updates and persistence",
+        "Unanimous activation, duplicate-vote prevention, rejection, change requests, and revision approval reset",
+        "Household isolation and chore completion persistence"
+      ]
+    },
+    "frontend_production_build": "passed",
+    "python_compile": "passed"
+  },
+  "browser_verification": {
+    "application_url": "http://127.0.0.1:5175/home",
+    "api_url": "http://127.0.0.1:8272",
+    "household_creation_and_refresh_persistence": "passed in a disposable household",
+    "dashboard_and_feature_routes": "passed",
+    "house_rules_to_house_board": "passed; the Board analysis retrieved the active kitchen rule, requested clarification where needed, and created an approval request with a linked notification",
+    "notifications_and_approvals": "passed; read state updated and the request completed only after the additional roommate approval",
+    "mediation_agents": "passed; Listening, Mediation, and Agreement agents ran, the Mediation Agent retrieved the active rule, and the agreement remained pending at one approval then activated at two",
+    "chores_and_bills": "passed; chore completion persisted after refresh and the temporary completion toggle was reverted; sample splits were $68 / 4 = $17 and $42.60 / 4 = $10.65",
+    "responsive_viewport": "390x844 dashboard and Bills & Rent inspected",
+    "browser_console_errors": 0,
+    "browser_issue": "One Chrome autofill suggestion: the roommate profile select has an accessible label but no id/name. It remains operable and labeled; no workflow failure was found.",
+    "screenshots": "Could not export browser captures with the available browser interface; manual capture is needed for screenshot artifacts."
+  },
+  "database_integrity": {
+    "database": "isolated test database (local path omitted)",
+    "sqlite_integrity_check": "ok",
+    "foreign_key_violations": 0,
+    "cold_process_reopen": "passed; a fresh Python process initialized the backend against the same isolated database and read the persisted household, feature records, and AI logs",
+    "fresh_http_backend_process": "passed; a new backend process on a separate local port returned HTTP 200 for health and the persisted test household; the temporary process was shut down after verification"
+  },
+  "live_ai_verification": {
+    "call_count": 7,
+    "requested_model": "gpt-6-luna",
+    "returned_model": "gpt-6-luna-global",
+    "all_calls_succeeded": true,
+    "reasoning_effort_breakdown": {
+      "high": 2,
+      "medium": 5
+    },
+    "actual_usage_totals": {
+      "input_tokens": 3954,
+      "output_tokens": 4027,
+      "reasoning_tokens": 2333,
+      "api_latency_ms": 54153
+    },
+    "calls": [
+      {
+        "agent": "house_rules",
+        "operation": "generate_proposals",
+        "effort": "high",
+        "input_tokens": 440,
+        "output_tokens": 397,
+        "reasoning_tokens": 273,
+        "latency_ms": 4410
+      },
+      {
+        "agent": "smart_board",
+        "operation": "analyze_post",
+        "effort": "medium",
+        "input_tokens": 649,
+        "output_tokens": 550,
+        "reasoning_tokens": 321,
+        "latency_ms": 4836
+      },
+      {
+        "agent": "smart_board",
+        "operation": "clarify_post",
+        "effort": "medium",
+        "input_tokens": 654,
+        "output_tokens": 639,
+        "reasoning_tokens": 410,
+        "latency_ms": 18314
+      },
+      {
+        "agent": "listening",
+        "operation": "initial_listening",
+        "effort": "medium",
+        "input_tokens": 308,
+        "output_tokens": 624,
+        "reasoning_tokens": 421,
+        "latency_ms": 6156
+      },
+      {
+        "agent": "listening",
+        "operation": "refresh_summary",
+        "effort": "medium",
+        "input_tokens": 347,
+        "output_tokens": 561,
+        "reasoning_tokens": 334,
+        "latency_ms": 5687
+      },
+      {
+        "agent": "mediation",
+        "operation": "compare_perspectives_and_rules",
+        "effort": "high",
+        "input_tokens": 890,
+        "output_tokens": 940,
+        "reasoning_tokens": 482,
+        "latency_ms": 7604
+      },
+      {
+        "agent": "agreement",
+        "operation": "prepare_pending_agreement",
+        "effort": "medium",
+        "input_tokens": 666,
+        "output_tokens": 316,
+        "reasoning_tokens": 92,
+        "latency_ms": 7146
+      }
+    ],
+    "costs": "Not estimated."
+  },
+  "feature_limitations_not_regressions": [
+    "Custom chore creation is not implemented; current chores are seeded and completion is persisted.",
+    "Expense creation and payment-status management are not implemented; Bills & Rent displays the seeded read-only summaries and splits.",
+    "Demo profile switching is not production authentication and cannot prove which person cast a vote."
+  ],
+  "security_and_scope": {
+    "api_key_exposed": false,
+    "prompt_or_roommate_text_in_evidence": false,
+    "costs_fabricated": false,
+    "existing_phase24_database_modified": false,
+    "ai_judge_or_new_features_added": false,
+    "application_source_fixes": 0
+  }
+}

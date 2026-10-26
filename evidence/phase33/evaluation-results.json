@@ -1,0 +1,157 @@
+{
+  "phase": "3.3 Tokenomics, AI Optimization & Impact Measurement",
+  "verified_on": "2026-10-26",
+  "simulated_scenario": {
+    "name": "Friday guest visit and quiet-hours disagreement",
+    "participants": 2,
+    "fictional": true,
+    "necessary_facts": [
+      "Riley has a 6:30 a.m. shift and reports hearing guests around 10:30 p.m. Friday but did not see when they left.",
+      "Morgan recalls two guests leaving around 9:45 p.m.; the time is not independently confirmed, and Morgan is willing to give notice.",
+      "Both want occasional guests to remain possible and accept the quiet-hours expectation.",
+      "The approved quiet-hours rule runs from 10:00 p.m. to 8:00 a.m.; two other active rules are unrelated to this case."
+    ],
+    "private_or_real_user_data_used": false
+  },
+  "optimization_experiment": {
+    "real_provider_calls": 4,
+    "final_scored_pair_calls": 2,
+    "requested_model": "gpt-6-luna",
+    "response_model": "gpt-6-luna-global",
+    "reasoning_effort": "high",
+    "output_budget_each": 2200,
+    "agent_and_instructions": "Existing production mediation_agents.mediate function; identical role instructions and output schema for both calls.",
+    "only_intended_difference": "The final optimized context shortened equivalent perspectives and the listening summary, retained the early-shift, notice-willingness, disputed-time, and other material facts, and omitted two unrelated approved rules while retaining the relevant approved quiet-hours rule.",
+    "excluded_exploratory_pair": {
+      "baseline": {"input_tokens": 864, "output_tokens": 528, "reasoning_tokens_subset": 142, "api_latency_ms": 8429, "illustrative_cost_usd": 0.0003504},
+      "optimized": {"input_tokens": 638, "output_tokens": 463, "reasoning_tokens_subset": 133, "api_latency_ms": 7440, "illustrative_cost_usd": 0.0002953},
+      "exclusion_reason": "The first compact version omitted Morgan's stated willingness to give notice and Riley's early-shift detail. Those calls remain in raw-usage.csv and historical totals, but are excluded from the controlled quality/cost comparison. The runner was corrected and the final pair repeated."
+    },
+    "results": [
+      {
+        "variant": "baseline",
+        "input_tokens": 864,
+        "output_tokens": 528,
+        "reasoning_tokens_subset": 142,
+        "api_latency_ms": 557,
+        "illustrative_cost_usd": 0.0003504,
+        "validated_output": {
+          "common_ground": [
+            "Both want occasional guests to remain possible.",
+            "Both support keeping shared areas quiet during quiet hours.",
+            "Both are open to giving notice about guests."
+          ],
+          "concerns": [
+            "Riley wants advance notice and quiet in shared areas during quiet hours, while Morgan wants guest visits to remain practical and not require formal permission."
+          ],
+          "reported_claims": [
+            "Riley reports hearing conversation from the bedroom at about 10:30 p.m. Friday.",
+            "Morgan recalls the two guests leaving around 9:45 p.m. and believes the living room was quiet afterward."
+          ],
+          "supported_information": [
+            "Morgan invited two friends over Friday.",
+            "Riley and Morgan both want occasional guest visits to remain possible.",
+            "The submitted summary reports that both accept the quiet-hours rule."
+          ],
+          "uncertainties": [
+            "The guests' actual departure time is not independently confirmed.",
+            "It is unknown whether conversation continued in the living room after 10:00 p.m. or what Riley heard at about 10:30 p.m."
+          ],
+          "rule_analysis": [
+            {
+              "rule_id": "rule-quiet-hours",
+              "relationship": "Relevant: quiet hours are 10:00 p.m. to 8:00 a.m., when shared areas and noise should be kept quiet. The differing recollections do not establish whether the rule was breached."
+            }
+          ],
+          "proposed_resolution": "Agree that either roommate can host occasional guests without formal permission, with a brief heads-up beforehand. Hosts will ensure shared areas stay quiet from 10:00 p.m. to 8:00 a.m. Since the timing is uncertain, treat this as a forward-looking agreement rather than a finding about Friday."
+        }
+      },
+      {
+        "variant": "optimized",
+        "input_tokens": 656,
+        "output_tokens": 528,
+        "reasoning_tokens_subset": 186,
+        "api_latency_ms": 4652,
+        "illustrative_cost_usd": 0.0003296,
+        "validated_output": {
+          "common_ground": [
+            "Both want occasional guests to remain possible.",
+            "Both support following quiet hours."
+          ],
+          "concerns": [
+            "Balancing advance notice about gatherings with allowing guests without formal permission each time.",
+            "Keeping noise in shared areas quiet during quiet hours."
+          ],
+          "reported_claims": [
+            "Riley reports hearing guests talking in the living room around 10:30 p.m. Friday.",
+            "Morgan recalls the two guests leaving around 9:45 p.m. Friday and believes no voices continued afterward."
+          ],
+          "supported_information": [
+            "Two guests visited Friday.",
+            "Both participants want occasional guests to remain possible."
+          ],
+          "uncertainties": [
+            "The guests' departure time is not independently confirmed.",
+            "Whether voices continued after 10:00 p.m. is not independently confirmed.",
+            "Riley's reported time is approximate, and Riley did not see when the guests left."
+          ],
+          "rule_analysis": [
+            {
+              "rule_id": "rule-quiet-hours",
+              "relationship": "The rule sets quiet hours from 10:00 p.m. to 8:00 a.m. and asks that shared areas and noise be kept quiet then. It is relevant to the reported timing, but the conflicting, unverified accounts do not establish whether the rule was breached."
+            }
+          ],
+          "proposed_resolution": "Keep occasional guest visits welcome without requiring permission each time, and use a simple advance notice to coordinate. Agree that by 10:00 p.m. shared areas and noise will be kept quiet. Treat Friday's timing as unresolved rather than assigning blame."
+        }
+      }
+    ],
+    "measured_change": {
+      "input_token_reduction_percent": 24.1,
+      "output_token_reduction_percent": 0.0,
+      "reasoning_token_increase_percent": 31.0,
+      "api_latency_increase_percent": 735.0,
+      "estimated_cost_reduction_percent": 5.9,
+      "estimated_savings_per_call_usd": 0.0000208
+    },
+    "quality_review": {
+      "method": "The assistant made one qualitative pass using the stated rubric; it was not a separate API model-judge call or an independent human review.",
+      "dimensions": ["accuracy", "fairness", "approved-rule grounding", "clarity", "actionability"],
+      "baseline_scores_1_to_5": {"accuracy": 5, "fairness": 5, "approved_rule_grounding": 5, "clarity": 4, "actionability": 4},
+      "optimized_scores_1_to_5": {"accuracy": 5, "fairness": 5, "approved_rule_grounding": 5, "clarity": 5, "actionability": 4},
+      "automated_checks": {
+        "both_calls_returned_validated_structured_output": true,
+        "both_attributed_the_disputed_timeline": true,
+        "both_retained_material_uncertainty": true,
+        "both_referenced_only_the_supplied_relevant_rule_id": true,
+        "both_avoided_a_breach_or_guilt_finding": true,
+        "both_returned_a_nonempty_practical_resolution": true
+      },
+      "interpretation": "Comparable quality on this one synthetic scenario, with a slightly higher subjective clarity rating for the optimized output. The optimized call used fewer input tokens and had a lower illustrative cost, but unchanged output tokens, higher reasoning tokens, and highly variable latency. One paired sample cannot establish statistical significance or general quality improvement."
+    },
+    "production_prompt_changed": false
+  },
+  "impact_measurement": {
+    "simulated_scenario_results": {
+      "paired_generation_calls_completed": "Both calls in the final scored pair returned validated proposals. Two earlier exploratory calls are recorded but not scored because the compact input omitted material facts.",
+      "full_workflow_reference": "One documented Phase 3.1 browser scenario reached an activated agreement after the required two roommate approvals.",
+      "proposal_generation_time": "The Phase 3.1 scenario recorded 26,593 ms summed API latency across two Listening calls, one Mediation call, and one Agreement call. This is cumulative API time, not full elapsed user time.",
+      "optimization_case_mediation_latency_ms": {"baseline": 557, "optimized": 4652}
+    },
+    "automated_or_recorded_evaluation": {
+      "structured_output_and_scenario_checks": "Passed for both experiment outputs.",
+      "clarity_and_fairness_proxy": "Qualitative rubric ratings are in optimization-results.csv; they are output-quality judgments, not roommate perceptions."
+    },
+    "actual_human_feedback": {
+      "participants": 0,
+      "status": "Pending pilot; no user responses were collected.",
+      "perceived_fairness_and_willingness_to_use_again": "Not measured; questionnaire is prepared separately."
+    },
+    "claims": "No claim that homi. reduces roommate conflict or produces a real-world resolution outcome."
+  },
+  "sources": [
+    "evidence/phase33/raw-usage.csv",
+    "evidence/phase33/optimization-results.csv",
+    "evidence/phase31-integration.json",
+    "backend/mediation_agents.py"
+  ]
+}

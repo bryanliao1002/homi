@@ -1,0 +1,72 @@
+{
+  "sqlite_rows_included": 57,
+  "duplicate_request_id_rows_skipped": 0,
+  "unique_request_ids_seen": 42,
+  "database_sources": [
+    {
+      "source_db": "homi.sqlite",
+      "deduplicated_rows": 10
+    },
+    {
+      "source_db": "homi-phase22-budget-test.sqlite",
+      "deduplicated_rows": 5
+    },
+    {
+      "source_db": "homi-phase23-browser.sqlite",
+      "deduplicated_rows": 7
+    },
+    {
+      "source_db": "homi-phase23-live.sqlite",
+      "deduplicated_rows": 12
+    },
+    {
+      "source_db": "homi-phase24-browser.sqlite",
+      "deduplicated_rows": 8
+    },
+    {
+      "source_db": "homi-phase31-integration.sqlite",
+      "deduplicated_rows": 7
+    },
+    {
+      "source_db": "homi-phase32-live.sqlite",
+      "deduplicated_rows": 3
+    },
+    {
+      "source_db": "homi-phase33-experiment.sqlite",
+      "deduplicated_rows": 1
+    },
+    {
+      "source_db": "homi-phase33-context-live.sqlite",
+      "deduplicated_rows": 4
+    }
+  ],
+  "exported_evidence_checks": [
+    {
+      "evidence_file": "evidence/phase23-agent-evidence.json",
+      "exported_event_records": 7,
+      "matched_to_sqlite_rows": 7,
+      "additional_rows_added_to_analysis": 0
+    },
+    {
+      "evidence_file": "evidence/phase24-workflow.json",
+      "exported_event_records": 4,
+      "matched_to_sqlite_rows": 4,
+      "additional_rows_added_to_analysis": 0
+    },
+    {
+      "evidence_file": "evidence/phase31-integration.json",
+      "exported_event_records": 7,
+      "matched_to_sqlite_rows": 7,
+      "additional_rows_added_to_analysis": 0
+    },
+    {
+      "evidence_file": "evidence/phase32-safety/live-ai-usage.json",
+      "exported_event_records": 3,
+      "matched_to_sqlite_rows": 3,
+      "additional_rows_added_to_analysis": 0
+    }
+  ],
+  "exported_evidence_rows_added_again": 0,
+  "method": "SQLite request rows are the event source of record; JSON event rows are exact-matched by tokens and latency as cross-checks only.",
+  "caveat": "Older rows without provider request IDs are retained as distinct SQLite row IDs; no evidence export rows are appended."
+}

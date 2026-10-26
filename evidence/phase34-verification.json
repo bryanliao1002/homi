@@ -1,0 +1,111 @@
+{
+  "phase": "3.4",
+  "verified_on": "2026-10-26",
+  "implementation": {
+    "chores": [
+      "Household-scoped create, edit, delete, assignment, ISO due dates, room labels, completion, and SQLite persistence",
+      "Dashboard receives updated chore summaries from the persisted household response"
+    ],
+    "shared_expenses": [
+      "Create equal or custom splits, choose participating roommates and payer, and optionally set a due date",
+      "Persist exact integer-cent shares and per-member paid status",
+      "Compute household outstanding totals and member owes/owed/net balances in the backend",
+      "Mark the active demo profile's own share paid without processing a transaction",
+      "Backfill existing seeded REAL amounts and split arrays into exact cent shares on startup"
+    ],
+    "authentication_limit": "The demo profile ID is not an authenticated identity; the app cannot verify who recorded a decision or payment."
+  },
+  "automated_verification": {
+    "backend_tests": {
+      "passed": 33,
+      "failed": 0,
+      "ai_mode": "Mocked AI responses for repeatable workflow tests; no fixture usage is reported as provider usage.",
+      "new_household_tests": [
+        "Chore create/edit/assignment/due date/completion/delete/persistence",
+        "Household isolation, foreign-member validation, and profile-scoped notification preservation",
+        "Equal $10.00 split among three roommates: 334/333/333 cents",
+        "Custom split exact-total validation without partial writes",
+        "Individual payment, idempotent repeat, and ownership checks",
+        "Legacy demo expense migration to cent-based shares"
+      ]
+    },
+    "frontend_production_build": "passed",
+    "python_compileall": "passed",
+    "fresh_clone_backend_tests": "33 passed, 0 failed",
+    "fresh_clone_frontend_build": "passed",
+    "fresh_clone_python_compileall": "passed"
+  },
+  "isolated_http_smoke": {
+    "database": "isolated disposable SQLite database (local path omitted)",
+    "frontend_routes": [
+      "/",
+      "/home",
+      "/chores",
+      "/bills",
+      "/rules",
+      "/board",
+      "/ask"
+    ],
+    "frontend_route_status": "all returned HTTP 200",
+    "backend_health": "passed",
+    "demo_seed": "passed",
+    "chore_create_edit_delete": "passed",
+    "equal_split_cents": [
+      334,
+      333,
+      333
+    ],
+    "share_payment_and_reload": "passed",
+    "custom_split": "passed",
+    "household_isolation": "passed",
+    "profile_scoped_notification_context": "passed in automated regression test and preserved by member_id-aware mutation responses"
+  },
+  "fresh_clone": {
+    "method": "Created a sanitized local source fixture in a disposable Git repository and cloned it to a separate directory; no remote repository was changed.",
+    "clone_path": "separate disposable local clone (path omitted)",
+    "npm_ci": "passed; 71 packages installed",
+    "python_dependencies": "passed from requirements.txt",
+    "frontend_and_backend_launch": "passed on localhost ports 5190 and 8276 because default and initial test ports were already occupied",
+    "main_routes_and_api_proxy": "passed",
+    "demo_and_creation_persistence": "passed through the Vite API proxy",
+    "chore_and_expense_workflow": "passed: chore create/edit/completion, exact equal shares, individual payment, and reload",
+    "sqlite_integrity_check": "ok",
+    "clone_dot_env_file": false,
+    "model": "gpt-6-luna",
+    "api_key_value_logged_or_copied": false
+  },
+  "live_ai_verification": {
+    "real_calls": 1,
+    "requested_model": "gpt-6-luna",
+    "returned_model": "gpt-6-luna-global",
+    "reasoning_effort": "medium",
+    "success": true,
+    "input_tokens": 15,
+    "output_tokens": 9,
+    "reasoning_tokens": 0,
+    "latency_ms": 443,
+    "request_id_or_key_in_evidence": false
+  },
+  "screenshots": {
+    "automated_capture": "Unavailable: the computer-use session exposed no browser-tab provider, and Chrome accessibility state requests timed out.",
+    "fabricated_images": false,
+    "manual_capture_steps": "evidence/final-screenshots/MANUAL-CAPTURE.md"
+  },
+  "local_review_app": {
+    "url": "http://127.0.0.1:5186",
+    "backend": "http://127.0.0.1:8274",
+    "database": "isolated disposable SQLite database (local path omitted)",
+    "existing_5173_and_8000_processes_replaced": false
+  },
+  "git_and_secret_handling": {
+    "parent_repository_history_rewritten": false,
+    "remote_push_or_publication": false,
+    "outer_git_allowlist_already_included_project": true,
+    "source_tracking_issue": "Project files were untracked rather than ignored; .env and SQLite exclusions were functioning.",
+    "project_files_staged": 58,
+    "commit_created": false,
+    "api_key_printed_or_added_to_client": false,
+    "real_env_file_in_clone": false,
+    "local_sqlite_database_in_clone": false
+  }
+}

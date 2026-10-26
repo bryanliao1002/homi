@@ -1,0 +1,308 @@
+{
+  "evidence": "Phase 2.3 browser E2E",
+  "test_data": "fictional roommate scenarios in an isolated SQLite database",
+  "privacy": "No prompts, statements, clarification answers, names, API keys, or request IDs are included.",
+  "model_requested": "gpt-6-luna",
+  "api_errors_in_this_run": 0,
+  "cases_by_status": {
+    "active": 1,
+    "gathering": 1,
+    "safety_support": 1
+  },
+  "agreement_versions": [
+    {
+      "version": 1,
+      "status": "superseded"
+    },
+    {
+      "version": 2,
+      "status": "superseded"
+    },
+    {
+      "version": 3,
+      "status": "active"
+    }
+  ],
+  "pricing": null,
+  "agent_runs": [
+    {
+      "agent": "listening",
+      "operation": "initial_listening",
+      "requested_model": "gpt-6-luna",
+      "response_model": "gpt-6-luna-global",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 294,
+        "output_tokens": 356,
+        "reasoning_tokens": 180,
+        "api_latency_ms": 3849
+      },
+      "outcome": "success",
+      "error_code": null,
+      "execution_trace": [
+        {
+          "event": "read_submitted_statements",
+          "tool": "load_private_perspectives",
+          "counts_and_status": {
+            "input_count": 1,
+            "participant_count": 2
+          }
+        },
+        {
+          "event": "organized_perspectives",
+          "tool": "create_neutral_summary",
+          "counts_and_status": {
+            "input_count": 1,
+            "output_count": 1,
+            "question_count": 3
+          }
+        },
+        {
+          "event": "listening_complete",
+          "tool": null,
+          "counts_and_status": {
+            "output_count": 1,
+            "question_count": 3,
+            "status": "success"
+          }
+        }
+      ]
+    },
+    {
+      "agent": "listening",
+      "operation": "refresh_summary",
+      "requested_model": "gpt-6-luna",
+      "response_model": "gpt-6-luna-global",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 347,
+        "output_tokens": 417,
+        "reasoning_tokens": 186,
+        "api_latency_ms": 4927
+      },
+      "outcome": "success",
+      "error_code": null,
+      "execution_trace": [
+        {
+          "event": "read_submitted_statements",
+          "tool": "load_private_perspectives",
+          "counts_and_status": {
+            "input_count": 2,
+            "participant_count": 2
+          }
+        },
+        {
+          "event": "organized_perspectives",
+          "tool": "create_neutral_summary",
+          "counts_and_status": {
+            "input_count": 2,
+            "output_count": 1,
+            "question_count": 2
+          }
+        },
+        {
+          "event": "listening_complete",
+          "tool": null,
+          "counts_and_status": {
+            "output_count": 1,
+            "question_count": 2,
+            "status": "success"
+          }
+        }
+      ]
+    },
+    {
+      "agent": "mediation",
+      "operation": "compare_perspectives_and_rules",
+      "requested_model": "gpt-6-luna",
+      "response_model": "gpt-6-luna-global",
+      "reasoning_effort": "high",
+      "usage": {
+        "input_tokens": 920,
+        "output_tokens": 1449,
+        "reasoning_tokens": 933,
+        "api_latency_ms": 9449
+      },
+      "outcome": "success",
+      "error_code": null,
+      "execution_trace": [
+        {
+          "event": "read_all_submitted_perspectives",
+          "tool": "load_case_perspectives",
+          "counts_and_status": {
+            "input_count": 2,
+            "participant_count": 2
+          }
+        },
+        {
+          "event": "retrieve_approved_house_rules",
+          "tool": "load_active_house_rules",
+          "counts_and_status": {
+            "rule_count": 3
+          }
+        },
+        {
+          "event": "retrieve_relevant_active_agreements",
+          "tool": "load_active_household_agreements",
+          "counts_and_status": {
+            "agreement_count": 0
+          }
+        },
+        {
+          "event": "balanced_resolution_prepared",
+          "tool": "compare_evidence_and_propose_next_step",
+          "counts_and_status": {
+            "output_count": 1,
+            "rule_count": 1,
+            "status": "success"
+          }
+        }
+      ]
+    },
+    {
+      "agent": "agreement",
+      "operation": "prepare_pending_agreement",
+      "requested_model": "gpt-6-luna",
+      "response_model": "gpt-6-luna-global",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 720,
+        "output_tokens": 433,
+        "reasoning_tokens": 153,
+        "api_latency_ms": 4128
+      },
+      "outcome": "success",
+      "error_code": null,
+      "execution_trace": [
+        {
+          "event": "structure_roommate_responsibilities",
+          "tool": "map_actions_to_case_participants",
+          "counts_and_status": {
+            "participant_count": 2,
+            "input_count": 1
+          }
+        },
+        {
+          "event": "pending_agreement_created",
+          "tool": "create_pending_agreement",
+          "counts_and_status": {
+            "output_count": 1,
+            "participant_count": 2,
+            "status": "pending"
+          }
+        }
+      ]
+    },
+    {
+      "agent": "agreement",
+      "operation": "revise_pending_agreement",
+      "requested_model": "gpt-6-luna",
+      "response_model": "gpt-6-luna-global",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 969,
+        "output_tokens": 451,
+        "reasoning_tokens": 149,
+        "api_latency_ms": 4138
+      },
+      "outcome": "success",
+      "error_code": null,
+      "execution_trace": [
+        {
+          "event": "structure_roommate_responsibilities",
+          "tool": "map_actions_to_case_participants",
+          "counts_and_status": {
+            "participant_count": 2,
+            "input_count": 1
+          }
+        },
+        {
+          "event": "pending_agreement_created",
+          "tool": "create_pending_agreement",
+          "counts_and_status": {
+            "output_count": 1,
+            "participant_count": 2,
+            "status": "pending"
+          }
+        }
+      ]
+    },
+    {
+      "agent": "agreement",
+      "operation": "revise_pending_agreement",
+      "requested_model": "gpt-6-luna",
+      "response_model": "gpt-6-luna-global",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 972,
+        "output_tokens": 361,
+        "reasoning_tokens": 58,
+        "api_latency_ms": 3423
+      },
+      "outcome": "success",
+      "error_code": null,
+      "execution_trace": [
+        {
+          "event": "structure_roommate_responsibilities",
+          "tool": "map_actions_to_case_participants",
+          "counts_and_status": {
+            "participant_count": 2,
+            "input_count": 1
+          }
+        },
+        {
+          "event": "pending_agreement_created",
+          "tool": "create_pending_agreement",
+          "counts_and_status": {
+            "output_count": 1,
+            "participant_count": 2,
+            "status": "pending"
+          }
+        }
+      ]
+    },
+    {
+      "agent": "listening",
+      "operation": "initial_listening",
+      "requested_model": "gpt-6-luna",
+      "response_model": "gpt-6-luna-global",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 285,
+        "output_tokens": 275,
+        "reasoning_tokens": 126,
+        "api_latency_ms": 3018
+      },
+      "outcome": "success",
+      "error_code": null,
+      "execution_trace": [
+        {
+          "event": "read_submitted_statements",
+          "tool": "load_private_perspectives",
+          "counts_and_status": {
+            "input_count": 1,
+            "participant_count": 2
+          }
+        },
+        {
+          "event": "organized_perspectives",
+          "tool": "create_neutral_summary",
+          "counts_and_status": {
+            "input_count": 1,
+            "output_count": 1,
+            "question_count": 2
+          }
+        },
+        {
+          "event": "listening_complete",
+          "tool": null,
+          "counts_and_status": {
+            "output_count": 1,
+            "question_count": 2,
+            "status": "success"
+          }
+        }
+      ]
+    }
+  ]
+}

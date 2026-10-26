@@ -1,0 +1,98 @@
+{
+  "phase": "2.4 Smart House Board",
+  "test_date": "2026-10-26",
+  "environment": {
+    "web_url": "http://127.0.0.1:5188/home",
+    "backend_url": "http://127.0.0.1:8271",
+    "database": "isolated test database (local path omitted)",
+    "household_data": "seeded demo household with synthetic test activity"
+  },
+  "live_ai_usage": {
+    "requested_model": "gpt-6-luna",
+    "response_model": "gpt-6-luna-global",
+    "reasoning_effort": "medium",
+    "provider_calls": 4,
+    "successful_calls": 3,
+    "incomplete_calls": 1,
+    "input_tokens": 2693,
+    "output_tokens": 3370,
+    "reasoning_tokens": 2547,
+    "api_latency_ms_total": 26557,
+    "output_tokens_include_reasoning_tokens": true,
+    "calls": [
+      {
+        "operation": "analyze_post",
+        "budget_at_call_time": 1200,
+        "input_tokens": 661,
+        "output_tokens": 766,
+        "reasoning_tokens": 563,
+        "api_latency_ms": 6703,
+        "result": "success",
+        "http_status": 200
+      },
+      {
+        "operation": "clarify_post",
+        "budget_at_call_time": 1200,
+        "input_tokens": 686,
+        "output_tokens": 1200,
+        "reasoning_tokens": 1032,
+        "api_latency_ms": 8757,
+        "result": "incomplete_output_limit_reached",
+        "http_status": 200
+      },
+      {
+        "operation": "revise_post",
+        "budget_at_call_time": 2048,
+        "input_tokens": 669,
+        "output_tokens": 733,
+        "reasoning_tokens": 504,
+        "api_latency_ms": 6191,
+        "result": "success",
+        "http_status": 200
+      },
+      {
+        "operation": "clarify_post",
+        "budget_at_call_time": 2048,
+        "input_tokens": 677,
+        "output_tokens": 671,
+        "reasoning_tokens": 448,
+        "api_latency_ms": 4906,
+        "result": "success",
+        "http_status": 200
+      }
+    ],
+    "retry_behavior": {
+      "production_policy": "One retry at 3072 output tokens only after an HTTP 200 output-limit incomplete response; otherwise no retry.",
+      "live_retry_after_fix": false,
+      "reason": "Both real requests made after raising the first-attempt budget to 2048 completed within that budget.",
+      "retry_path_test": "Passed with mocked provider responses: 2048 then 3072 under one agent run ID; other errors did not retry."
+    },
+    "cost": "Not estimated."
+  },
+  "workflow_results": {
+    "live_board_analysis_and_active_rule_lookup": "Passed; the agent returned a grounded potential quiet-hours overlap from the three active approved rules.",
+    "clarification_and_no_invented_details": "Passed; the agent asked for the missing date year and did not create an approval request until clarification was supplied.",
+    "incomplete_response_fallback": "Passed; the original post stayed visible with AI unavailable status, and no approval rows were created.",
+    "request_approval": "Passed; three required roommate profiles acted independently. The request remained pending at 1/3 and 2/3, then became approved at 3/3.",
+    "notifications": "Passed; recipient-scoped notices linked to the Board post, read/unread state changed, and 15 stored Board notices had 15 distinct dedupe keys.",
+    "persistence": "Passed; the approved request and rule warning remained after browser refresh.",
+    "existing_routes": "Passed in browser: Home dashboard, House Rules, Ask homi., Chores, and Bills & Rent.",
+    "profile_switching": "Passed across the four demo profiles. This is not authentication."
+  },
+  "automated_verification": {
+    "backend_workflow_tests": "14 passed, 0 failed",
+    "frontend_production_build": "Passed",
+    "python_syntax_check": "Passed",
+    "coverage_notes": "Tests cover normal posts, rule retrieval, clarification, unavailable-AI fallback, output-limit retry, approval/rejection/revision, authorization, notification dedupe, and mediation regressions."
+  },
+  "security_and_logging": {
+    "api_key": "Backend-only; not included in this file or frontend source.",
+    "prompt_and_post_text": "Not included.",
+    "agent_trace_content": "Tool names, member/rule counts, validation counts, budgets, and sanitized outcomes only.",
+    "approval_authority": "Deterministic backend logic; AI cannot approve a request."
+  },
+  "screenshot_artifact": {
+    "saved_in_evidence_directory": false,
+    "reason": "The CUA browser screenshot was captured inline for visual verification, but the available CUA API did not provide a local-file export operation."
+  }
+}
