@@ -170,6 +170,6 @@ npm run build
 .venv/bin/python -m compileall -q backend tests
 ```
 
-The test database path is disposable; workflow tests also use temporary isolated SQLite files. This project is prepared for a GitHub push, but it is not published or pushed from this workspace.
+The test database path is disposable; workflow tests also use temporary isolated SQLite files. The public source repository is [github.com/bryanliao1002/homi](https://github.com/bryanliao1002/homi).
 
 Never put API keys in frontend code or commit a real `.env` file. `.env` and `.env.*` files are ignored by `.gitignore`; `.env.example` contains only a blank placeholder. SQLite databases and sidecar files are ignored as well.
